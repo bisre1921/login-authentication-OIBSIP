@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <link rel="stylesheet" href="signup-style.css">
+</head>
+<body>
+    <div id="login-box">
+            <h1>sign in</h1>
+            <a class = "ask-account" href="login.html">already hava an account</a>
+            <div class = "form-div">
+            <input type="text" id="username" name="username" placeholder="your username" />
+            <input type="text" id="email" name="email" placeholder="your email" />
+            <input type="password" id="password" name="password" placeholder="your password" />
+            <input type="submit" id="signup" name="sign-up_submit" value="sign up" placeholder="your email" />
+            </div>
+    </div>
+</body>
+
+<script type="module">
+    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
+    import { getDatabase , set , ref } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyDD5V5KnOJ5VjtMhTM6sL59mpO9W8yKE5U",
+      authDomain: "oasis-3-67792.firebaseapp.com",
+      databaseURL: "https://oasis-3-67792-default-rtdb.firebaseio.com",
+      projectId: "oasis-3-67792",
+      storageBucket: "oasis-3-67792.appspot.com",
+      messagingSenderId: "999328980597",
+      appId: "1:999328980597:web:52ed63e8178d596a92e23c"
+    };
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    signup.addEventListener("click" , (event) => {
+
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        createUserWithEmailAndPassword(auth, email, password) .then((userCredential) => {
+                const user = userCredential.user;
+                set(ref(database , "users/" + user.uid) , {
+                        username : username , 
+                        email : email
+                    });
+                 window.location.href = 'registermessage.html';
+
+    }) .catch((error) => {
+       const errorCode = error.code;
+       const errorMessage = error.message;
+       alert(errorMessage);
+    });
+
+})
+  </script>
+</html>

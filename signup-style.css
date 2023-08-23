@@ -1,0 +1,71 @@
+body {
+    background-image: url("images/sign-up-back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+#login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+}
+#login-box .ask-account {
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+#login-box .ask-account:hover {
+    background-color: white;
+    color: black;
+}
+#login-box .form-div {
+    border: 5px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+#login-box h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+}
+#login-box input {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 400px;
+    height: 30px;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+#login-box input::placeholder {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+}
+#login-box #signup {
+    cursor: pointer;
+    color: white;
+    background-color: green;
+    font-size: 1rem;
+    font-weight: 700;
+}
+#login-box #signup:hover {
+    background-color: white;
+    color: black;
+}    

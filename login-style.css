@@ -1,0 +1,60 @@
+body {
+    background-image: url("images/back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+#login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+}
+#login-box .form-div {
+    border: 5px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+#login-box h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+}
+#login-box input {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 400px;
+    height: 30px;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+#login-box #login {
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#login-box #login:hover {
+    background-color: white;
+    color: black;
+}
+#login-box input::placeholder {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
